@@ -22,7 +22,7 @@ add_library (OpenCL SHARED ${OPENCL_ICD_LOADER_SOURCES})
 set_target_properties (OpenCL PROPERTIES VERSION "1.2" SOVERSION "1")
 
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
-    set_target_properties (OpenCL PROPERTIES LINK_FLAGS "-pthread -Wl,--version-script -Wl,${CMAKE_SOURCE_DIR}/icd_exports.map")
+    set_target_properties (OpenCL PROPERTIES LINK_FLAGS "-pthread -Wl,--version-script -Wl,${CMAKE_SOURCE_DIR}/lib/OpenCL-ICD-Loader/icd_exports.map")
 endif ()
 
 target_link_libraries (OpenCL ${CMAKE_DL_LIBS})
